@@ -24,12 +24,14 @@ include_recipe 'java::default'
 include_recipe 'ark::default'
 
 mvn_version = node['maven']['version'].to_s
+bin_path = node['maven']['setup_bin'] ? node['maven']['bin_path'] : []
 
 ark 'maven' do
   url      node['maven'][mvn_version]['url']
   checksum node['maven'][mvn_version]['checksum']
   home_dir node['maven']['m2_home']
   version  node['maven'][mvn_version]['version']
+  has_binaries bin_path
   append_env_path true
 end
 

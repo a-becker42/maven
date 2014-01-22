@@ -28,7 +28,7 @@ Attributes
 * `node['maven']['3']['url']` - download url for maven3
 * `node['maven']['3']['checksum']` - the checksum, which you will have to recalculate if you change the download url using shasum -a 256 <file>
 * `node['maven']['repositories']` - an array of maven repositories to use; must be specified as an array. Used in the maven LWRP.
-* `node['maven']['setup_bin']` - Whether or not to put mvn on your system path, defaults to false
+* `node['maven']['setup_bin']` - Whether or not to put a symlink to the mvn binary in "/usr/local/bin"
 * `node['maven']['mavenrc']['opts']` - Value of `MAVEN_OPTS` environment variable exported via `/etc/mavenrc` template, defaults to `-Dmaven.repo.local=$HOME/.m2/repository -Xmx384m -XX:MaxPermSize=192m`
 
 
